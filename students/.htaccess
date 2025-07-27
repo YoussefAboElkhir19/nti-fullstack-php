@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /first_php/students/
+
+# لو الملف أو الفولدر موجودين فعلاً، ما تعيدش التوجيه
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# حول أي طلب إلى index.php
+RewriteRule ^(.+)$ index.php [QSA,L]
